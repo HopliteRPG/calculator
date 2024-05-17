@@ -1,6 +1,6 @@
 let firstNumber = 16;
 let secondNumber = 4;
-let operand = "+";
+let operator = "+";
 
 
 function add(num1,num2){
@@ -19,19 +19,19 @@ function divide(num1,num2){
     return num1/num2;
 }
 
-function operate(operand,firstNumber,secondNumber){
-    if(operand === "+"){
+function operate(operator,firstNumber,secondNumber){
+    if(operator === "+"){
         return add(firstNumber,secondNumber);
     }
-    else if(operand === "-"){
+    else if(operator === "-"){
         return subtract(firstNumber,secondNumber);
     }
-    else if(operand === "*"){
+    else if(operator === "*"){
         return multiply(firstNumber,secondNumber);
     }
-    else if(operand === "/"){
+    else if(operator === "/"){
         return divide(firstNumber,secondNumber);
     }
 }
 
-console.log(operate(operand,firstNumber,secondNumber));
+console.log(operate(operator,firstNumber,secondNumber));
