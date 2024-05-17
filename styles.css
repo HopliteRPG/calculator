@@ -1,0 +1,57 @@
+html{
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.calculator-div{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    background-color: blue ;
+    outline: solid;
+}
+
+.top-calculator-div{
+    height: 20%;
+    background-color: white;
+    outline: solid;
+}
+
+.bottom-calculator-div{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-row-buttons{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.second-row-buttons{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+
+}
+
+.thrid-row-buttons{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+
+}
+
+
+
+.calc-button{
+    flex: 1;
+}
