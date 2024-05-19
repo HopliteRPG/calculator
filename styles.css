@@ -1,3 +1,4 @@
+/*properties of the page itself*/
 html{
     height: 100%;
 }
@@ -7,6 +8,8 @@ body{
     height: 100%;
     width: 100%;
 }
+
+/*calculator HTML*/
 .calculator-div{
     display: flex;
     flex-direction: column;
@@ -15,12 +18,23 @@ body{
     background-color: blue ;
     outline: solid;
 }
+/*Top calculator HTML*/
 
 .top-calculator-div{
+    display: flex;
+    flex-direction: row;
     height: 20%;
     background-color: white;
     outline: solid;
+    align-items: center;
+    justify-content: flex-end;
+
 }
+
+.result-html{
+padding: 10px;
+}
+/*Bottom calculator HTML*/
 
 .bottom-calculator-div{
     height: 80%;
@@ -28,30 +42,13 @@ body{
     flex-direction: column;
 }
 
-.first-row-buttons{
+.first-row-buttons, .second-row-buttons, .thrid-row-buttons,.fourth-row-buttons, .fifth-row-buttons{
     display: flex;
     flex-direction: row;
     flex: 1;
 }
-
-.second-row-buttons{
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-
-
-}
-
-.thrid-row-buttons{
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-
-
-}
-
-
 
 .calc-button{
     flex: 1;
 }
+
