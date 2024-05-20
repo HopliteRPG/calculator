@@ -1,7 +1,15 @@
 let firstNumber = 16;
 let secondNumber = 4;
 let operator = "+";
+let result = document.querySelector(".result-html");
+let placeholder;
 
+ 
+const oneButton = document.querySelector(".one-button")
+
+oneButton.addEventListener("click", ()=> {
+    result.innerText += "1";
+});
 
 function add(num1,num2){
     return num1 + num2;
