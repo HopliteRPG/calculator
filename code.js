@@ -1,9 +1,11 @@
-let firstNumber = 16;
-let secondNumber = 4;
-let operator = "+";
+let firstNumber; //Placeholder for testing
+let secondNumber; //Placeholder for testing
+let operator;   //Placeholder for testing
 let result = document.querySelector(".result-html");
-let placeholder;
-
+let placeholderResult = "";
+let resultNum = 0;
+        
+                                     
 const numberButtons = {
     one: {
         oneButton: document.querySelector(".one-button")
@@ -56,54 +58,84 @@ const numberButtons = {
 }
 
 
-
-
 numberButtons.one.oneButton.addEventListener("click", ()=> {
-    result.innerText += "1";
+    placeholderResult += "1";
+    console.log(placeholderResult);
 });
 numberButtons.two.twoButton.addEventListener("click", ()=> {
-    result.innerText += "2";
+    placeholderResult += "2";
+    console.log(placeholderResult);
+
 });
 numberButtons.three.threeButton.addEventListener("click", ()=> {
-    result.innerText += "3";
+    placeholderResult += "3";
+    console.log(placeholderResult);
 });
 numberButtons.four.fourButton.addEventListener("click", ()=> {
-    result.innerText += "4";
+    placeholderResult += "4";
+    console.log(placeholderResult);
 });
 numberButtons.five.fiveButton.addEventListener("click", ()=> {
-    result.innerText += "5";
+    placeholderResult += "5";
+    console.log(placeholderResult);
 });
 numberButtons.six.sixButton.addEventListener("click", ()=> {
-    result.innerText += "6";
+    placeholderResult += "6";
+    console.log(placeholderResult);
 });
 numberButtons.seven.sevenButton.addEventListener("click", ()=> {
-    result.innerText += "7";
+    placeholderResult += "7";
+    console.log(placeholderResult);
 });
 numberButtons.eight.eightButton.addEventListener("click", ()=> {
-    result.innerText += "8";
+    placeholderResult += "8";
+    console.log(placeholderResult);
 });
 numberButtons.nine.nineButton.addEventListener("click", ()=> {
-    result.innerText += "9";
+    placeholderResult += "9";
+    console.log(placeholderResult);
 });
 numberButtons.zero.zeroButton.addEventListener("click", ()=> {
-    result.innerText += "0";
+    placeholderResult += "0";
+    console.log(placeholderResult);
 });
 numberButtons.add.addButton.addEventListener("click", ()=> {
-    result.innerText += "+";
+    placeholderResult += "+";
+    console.log(placeholderResult);
 });
 numberButtons.subtract.subtractButton.addEventListener("click", ()=> {
-    result.innerText += "-";
+    placeholderResult += "-";
+    console.log(placeholderResult);
 });
 numberButtons.multiply.multiplyButton.addEventListener("click", ()=> {
-    result.innerText += "*";
+    placeholderResult += "*";
+    console.log(placeholderResult);
 });
 numberButtons.divide.divideButton.addEventListener("click", ()=> {
-    result.innerText += "/";
+    placeholderResult += "/";
+    console.log(placeholderResult);
 });
 numberButtons.clear.clearButton.addEventListener("click", ()=> {
-    result.innerText = "";
+    placeholderResult = "";
+    console.log(placeholderResult);
 });
 numberButtons.operate.operateButton.addEventListener("click", ()=> {
+const splitArray = placeholderResult.split(/([+\-*/])/);
+console.log(placeholderResult)
+console.log(splitArray)
+  
+firstNumber = splitArray.shift()
+operator = splitArray.shift()
+secondNumber = splitArray.shift()
+
+console.log(firstNumber)
+console.log(operator)
+console.log(secondNumber)
+  
+resultNum = operate(operator,firstNumber, secondNumber);
+result.innerText = resultNum
+
+
 });
 
 //Math Functions
@@ -138,4 +170,4 @@ function operate(operator,firstNumber,secondNumber){
     }
 }
 
-console.log(operate(operator,firstNumber,secondNumber));
+//console.log(operate(operator,firstNumber,secondNumber));
