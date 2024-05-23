@@ -6,6 +6,8 @@ let placeholderResult = "";
 let resultNum = 0;
 
 
+
+
         
 const numberButtons = {
     one: {
@@ -111,24 +113,34 @@ numberButtons.zero.zeroButton.addEventListener("click", ()=> {
     console.log(placeholderResult);
 });
 numberButtons.add.addButton.addEventListener("click", ()=> {
-    placeholderResult += "+";
-    resultHtml.innerText = placeholderResult;
-    console.log(placeholderResult);
+    if (!isNaN(placeholderResult[placeholderResult.length-1])){
+        placeholderResult += "+";
+        resultHtml.innerText = placeholderResult;
+        console.log(placeholderResult);
+    }
+
+
 });
 numberButtons.subtract.subtractButton.addEventListener("click", ()=> {
-    placeholderResult += "-";
-    resultHtml.innerText = placeholderResult;
-    console.log(placeholderResult);
+    if (!isNaN(placeholderResult[placeholderResult.length-1])){
+        placeholderResult += "-";
+        resultHtml.innerText = placeholderResult;
+        console.log(placeholderResult);
+    }
 });
 numberButtons.multiply.multiplyButton.addEventListener("click", ()=> {
-    placeholderResult += "*";
-    resultHtml.innerText = placeholderResult;
-    console.log(placeholderResult);
+    if (!isNaN(placeholderResult[placeholderResult.length-1])){
+        placeholderResult += "*";
+        resultHtml.innerText = placeholderResult;
+        console.log(placeholderResult);
+    }
 });
 numberButtons.divide.divideButton.addEventListener("click", ()=> {
-    placeholderResult += "/";
-    resultHtml.innerText = placeholderResult;
-    console.log(placeholderResult);
+    if (!isNaN(placeholderResult[placeholderResult.length-1])){
+        placeholderResult += "/";
+        resultHtml.innerText = placeholderResult;
+        console.log(placeholderResult);
+    }
 });
 numberButtons.clear.clearButton.addEventListener("click", ()=> {
    firstNumber = 0; 
@@ -157,7 +169,10 @@ console.log(operator)
 console.log(secondNumber)
   
 resultNum = operate(operator,firstNumber, secondNumber);
-resultHtml.innerText = resultNum
+resultHtml.innerText = resultNum;
+
+
+
 
 
 });
