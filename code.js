@@ -1,7 +1,7 @@
-let firstNumber; //Placeholder for testing
-let secondNumber; //Placeholder for testing
-let operator;   //Placeholder for testing
-let result = document.querySelector(".result-html");
+let firstNumber; 
+let secondNumber; 
+let operator;   
+let resultHtml = document.querySelector(".result-html");
 let placeholderResult = "";
 let resultNum = 0;
 
@@ -61,73 +61,73 @@ const numberButtons = {
 
 numberButtons.one.oneButton.addEventListener("click", ()=> {
     placeholderResult += "1";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.two.twoButton.addEventListener("click", ()=> {
     placeholderResult += "2";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 
 });
 numberButtons.three.threeButton.addEventListener("click", ()=> {
     placeholderResult += "3";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.four.fourButton.addEventListener("click", ()=> {
     placeholderResult += "4";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.five.fiveButton.addEventListener("click", ()=> {
     placeholderResult += "5";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.six.sixButton.addEventListener("click", ()=> {
     placeholderResult += "6";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.seven.sevenButton.addEventListener("click", ()=> {
     placeholderResult += "7";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.eight.eightButton.addEventListener("click", ()=> {
     placeholderResult += "8";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.nine.nineButton.addEventListener("click", ()=> {
     placeholderResult += "9";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.zero.zeroButton.addEventListener("click", ()=> {
     placeholderResult += "0";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.add.addButton.addEventListener("click", ()=> {
     placeholderResult += "+";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.subtract.subtractButton.addEventListener("click", ()=> {
     placeholderResult += "-";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.multiply.multiplyButton.addEventListener("click", ()=> {
     placeholderResult += "*";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.divide.divideButton.addEventListener("click", ()=> {
     placeholderResult += "/";
-    result.innerText = placeholderResult;
+    resultHtml.innerText = placeholderResult;
     console.log(placeholderResult);
 });
 numberButtons.clear.clearButton.addEventListener("click", ()=> {
@@ -137,7 +137,7 @@ numberButtons.clear.clearButton.addEventListener("click", ()=> {
    placeholderResult = "";
    resultNum = 0;
    placeholderResult = "";
-   result.innerText = ""
+   resultHtml.innerText = ""
    console.log(placeholderResult);
 });
 numberButtons.operate.operateButton.addEventListener("click", ()=> {
@@ -157,7 +157,7 @@ console.log(operator)
 console.log(secondNumber)
   
 resultNum = operate(operator,firstNumber, secondNumber);
-result.innerText = resultNum
+resultHtml.innerText = resultNum
 
 
 });
