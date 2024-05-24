@@ -56,7 +56,14 @@ let operateButton = document.querySelector(".operate-button")
         console.log(secondNumber);
           
         resultNum = operate(operator,firstNumber, secondNumber);
-        if(!isNaN(resultNum)){
+        if(resultNum === Infinity){
+            resultHtml.innerText = "0";
+            placeholderResult = "";
+            resultNum = 0;
+            placeholderResult += resultNum;
+
+        }
+        else if(!isNaN(resultNum)){
             resultHtml.innerText = resultNum;
 
             placeholderResult = "";
