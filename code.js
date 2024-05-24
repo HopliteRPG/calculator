@@ -35,7 +35,6 @@ let operateButton = document.querySelector(".operate-button")
             operator = "";  
             placeholderResult = "";
             resultNum = 0;
-            placeholderResult = "";
             resultHtml.innerText = "";
             console.log(placeholderResult);
         });
@@ -58,7 +57,19 @@ let operateButton = document.querySelector(".operate-button")
           
         resultNum = operate(operator,firstNumber, secondNumber);
         resultHtml.innerText = resultNum;
+
+        placeholderResult = "";
+
+        placeholderResult += resultNum;
+
+
+
+
         });
+
+function resetInformation(){
+    
+}
 
 //Math Functions
 function add(num1,num2){
