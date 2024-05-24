@@ -56,11 +56,19 @@ let operateButton = document.querySelector(".operate-button")
         console.log(secondNumber);
           
         resultNum = operate(operator,firstNumber, secondNumber);
-        resultHtml.innerText = resultNum;
+        if(!isNaN(resultNum)){
+            resultHtml.innerText = resultNum;
 
-        placeholderResult = "";
-
-        placeholderResult += resultNum;
+            placeholderResult = "";
+    
+            placeholderResult += resultNum;
+        }
+        else{
+            alert("Enter valid equation")
+            resultHtml.innerText = "";
+            placeholderResult = "";
+        }
+        
 
 
 
