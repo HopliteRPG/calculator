@@ -4,6 +4,7 @@ let operator;
 let resultHtml = document.querySelector(".result-html");
 let placeholderResult = "";
 let resultNum = 0;
+let doesOperatorExist = false;
 
 let numberButtons = document.querySelectorAll(".number-button");
 let operatorButtons = document.querySelectorAll(".operator-button");
@@ -12,42 +13,58 @@ let operateButton = document.querySelector(".operate-button")
 
         numberButtons.forEach((numberButton) => {
             numberButton.addEventListener("click", () => {
-                placeholderResult += numberButton.value;
-                resultHtml.innerText = placeholderResult;
-                console.log(placeholderResult);
+                if(firstNumber === 0 && doesOperatorExist === false){
+                    
+                }
+                else{
+                    placeholderResult += numberButton.value;
+                    resultHtml.innerText = placeholderResult;
+                    console.log(placeholderResult);
+                }
+
               });
         });
 
         operatorButtons.forEach((operatorButton) => {
             operatorButton.addEventListener("click", () => {
-                // doesnt add operator if number is negative
-                if (!isNaN(placeholderResult[placeholderResult.length-1]) && !placeholderResult.includes("+") && !placeholderResult.includes("-") && !placeholderResult.includes("*") && !placeholderResult.includes("/")){
-                    placeholderResult += operatorButton.value;
-                    resultHtml.innerText = placeholderResult;
-                    console.log(placeholderResult);
+                if (doesOperatorExist === false && !isNaN(placeholderResult[placeholderResult.length-1]) && !placeholderResult.includes("+") && !placeholderResult.includes("-") && !placeholderResult.includes("*") && !placeholderResult.includes("/")){  
+                    if(!isNaN(firstNumber)){
+                        operator = operatorButton.value;
+                        placeholderResult = "";
+                        resultHtml.innerText = "";
+                        doesOperatorExist = true;
+                    }
+                    else{
+                        operator = operatorButton.value;
+                        firstNumber = placeholderResult
+                        placeholderResult = "";
+                        resultHtml.innerText = "";
+                        doesOperatorExist = true;
+                    }
+                   
+
+
                 }    
               });
         });
     
 
         clearButton.addEventListener("click",()=>{
-            firstNumber = 0; 
-            secondNumber = 0; 
+            firstNumber = ""; 
+            secondNumber = ""; 
             operator = "";  
             placeholderResult = "";
-            resultNum = 0;
+            resultNum = "";
             resultHtml.innerText = "";
+            doesOperatorExist = false;
+
             console.log(placeholderResult);
         });
 
         operateButton.addEventListener("click",()=>{
-        const splitArray = placeholderResult.split(/([+\-*/])/);
-        console.log(placeholderResult);
-        console.log(splitArray);
           
-        firstNumber = splitArray.shift();
-        operator = splitArray.shift();
-        secondNumber = splitArray.shift();
+
+        secondNumber = placeholderResult;
         
         firstNumber = parseInt(firstNumber);
         secondNumber = parseInt(secondNumber);
@@ -57,24 +74,31 @@ let operateButton = document.querySelector(".operate-button")
         console.log(secondNumber);
           
         resultNum = operate(operator,firstNumber, secondNumber);
-        if(resultNum === Infinity){
+        if(resultNum === Infinity || resultNum === -Infinity){
             resultHtml.innerText = "0";
             placeholderResult = "";
             resultNum = 0;
             placeholderResult += resultNum;
+            doesOperatorExist = false;
+            operator = "";
+            firstNumber = resultNum;
 
         }
         else if(!isNaN(resultNum)){
             resultHtml.innerText = resultNum;
-
-            placeholderResult = "";
-    
-            placeholderResult += resultNum;
+            doesOperatorExist = false;
+            operator = "";
+            firstNumber = resultNum;
         }
         else{
             alert("Enter valid equation")
             resultHtml.innerText = "";
             placeholderResult = "";
+            resultNum = 0;
+            doesOperatorExist = false;
+            operator = "";
+            firstNumber = "";
+
         }
         
 
