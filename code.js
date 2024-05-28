@@ -20,7 +20,8 @@ let operateButton = document.querySelector(".operate-button")
 
         operatorButtons.forEach((operatorButton) => {
             operatorButton.addEventListener("click", () => {
-                if (!isNaN(placeholderResult[placeholderResult.length-1])){
+                // doesnt add operator if number is negative
+                if (!isNaN(placeholderResult[placeholderResult.length-1]) && !placeholderResult.includes("+") && !placeholderResult.includes("-") && !placeholderResult.includes("*") && !placeholderResult.includes("/")){
                     placeholderResult += operatorButton.value;
                     resultHtml.innerText = placeholderResult;
                     console.log(placeholderResult);
