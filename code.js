@@ -5,6 +5,7 @@ let resultHtml = document.querySelector(".result-html");
 let placeholderResult = "";
 let resultNum = 0;
 let doesOperatorExist = false;
+let resultOnScreen = false;
 
 let numberButtons = document.querySelectorAll(".number-button");
 let operatorButtons = document.querySelectorAll(".operator-button");
@@ -13,7 +14,7 @@ let operateButton = document.querySelector(".operate-button")
 
         numberButtons.forEach((numberButton) => {
             numberButton.addEventListener("click", () => {
-                if(firstNumber === 0 && doesOperatorExist === false ){
+                if(doesOperatorExist === false && resultOnScreen === true){
                     
                 }
                 else{
@@ -35,7 +36,8 @@ let operateButton = document.querySelector(".operate-button")
                         placeholderResult = "";
                         resultHtml.innerText = "";
                         doesOperatorExist = true;
-                        console.log("if first number is not a number:" + firstNumber)
+                        resultOnScreen = false;
+
                     }
 
                     else if(!isNaN(firstNumber)){
@@ -43,7 +45,6 @@ let operateButton = document.querySelector(".operate-button")
                         placeholderResult = "";
                         resultHtml.innerText = "";
                         doesOperatorExist = true;
-                        console.log("if first number is a number:" + firstNumber)
                     }
                 }    
               });
@@ -58,7 +59,7 @@ let operateButton = document.querySelector(".operate-button")
             resultNum = "";
             resultHtml.innerText = "";
             doesOperatorExist = false;
-
+            resultOnScreen = false;
             console.log(placeholderResult);
         });
 
@@ -90,6 +91,7 @@ let operateButton = document.querySelector(".operate-button")
             doesOperatorExist = false;
             operator = "";
             firstNumber = resultNum;
+            resultOnScreen = true;
         }
         else{
             alert("Enter valid equation")
@@ -100,6 +102,8 @@ let operateButton = document.querySelector(".operate-button")
             resultNum = "";
             resultHtml.innerText = "";
             doesOperatorExist = false;  
+            resultOnScreen = false;
+
 
         }
         
