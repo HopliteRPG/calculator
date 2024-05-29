@@ -13,7 +13,7 @@ let operateButton = document.querySelector(".operate-button")
 
         numberButtons.forEach((numberButton) => {
             numberButton.addEventListener("click", () => {
-                if(firstNumber === 0 && doesOperatorExist === false){
+                if(firstNumber === 0 && doesOperatorExist === false ){
                     
                 }
                 else{
@@ -28,30 +28,31 @@ let operateButton = document.querySelector(".operate-button")
         operatorButtons.forEach((operatorButton) => {
             operatorButton.addEventListener("click", () => {
                 if (doesOperatorExist === false && !isNaN(placeholderResult[placeholderResult.length-1]) && !placeholderResult.includes("+") && !placeholderResult.includes("-") && !placeholderResult.includes("*") && !placeholderResult.includes("/")){  
-                    if(!isNaN(firstNumber)){
-                        operator = operatorButton.value;
-                        placeholderResult = "";
-                        resultHtml.innerText = "";
-                        doesOperatorExist = true;
-                    }
-                    else{
+                    
+                    if(isNaN(firstNumber)){
                         operator = operatorButton.value;
                         firstNumber = placeholderResult
                         placeholderResult = "";
                         resultHtml.innerText = "";
                         doesOperatorExist = true;
+                        console.log("if first number is not a number:" + firstNumber)
                     }
-                   
 
-
+                    else if(!isNaN(firstNumber)){
+                        operator = operatorButton.value;
+                        placeholderResult = "";
+                        resultHtml.innerText = "";
+                        doesOperatorExist = true;
+                        console.log("if first number is a number:" + firstNumber)
+                    }
                 }    
               });
         });
     
 
         clearButton.addEventListener("click",()=>{
-            firstNumber = ""; 
-            secondNumber = ""; 
+            firstNumber = NaN;
+            secondNumber = NaN; 
             operator = "";  
             placeholderResult = "";
             resultNum = "";
@@ -92,12 +93,13 @@ let operateButton = document.querySelector(".operate-button")
         }
         else{
             alert("Enter valid equation")
-            resultHtml.innerText = "";
+            firstNumber = NaN;
+            secondNumber = NaN; 
+            operator = "";  
             placeholderResult = "";
-            resultNum = 0;
-            doesOperatorExist = false;
-            operator = "";
-            firstNumber = "";
+            resultNum = "";
+            resultHtml.innerText = "";
+            doesOperatorExist = false;  
 
         }
         
@@ -107,9 +109,6 @@ let operateButton = document.querySelector(".operate-button")
 
         });
 
-function resetInformation(){
-    
-}
 
 //Math Functions
 function add(num1,num2){
