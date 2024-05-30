@@ -41,6 +41,7 @@ let operateButton = document.querySelector(".operate-button")
                     }
 
                     else if(!isNaN(firstNumber)){
+
                         operator = operatorButton.value;
                         placeholderResult = "";
                         resultHtml.innerText = "";
@@ -68,20 +69,23 @@ let operateButton = document.querySelector(".operate-button")
 
         secondNumber = placeholderResult;
         
-        firstNumber = parseInt(firstNumber);
-        secondNumber = parseInt(secondNumber);
+        firstNumber = parseFloat(firstNumber).toFixed(2);
+        secondNumber = parseFloat(secondNumber).toFixed(2);
         
         console.log(firstNumber);
         console.log(operator);
         console.log(secondNumber);
-          
-        resultNum = operate(operator,firstNumber, secondNumber);
-        if(resultNum === Infinity || resultNum === -Infinity){
-            resultHtml.innerText = "0";
+        
+
+        resultNum = parseFloat(operate(operator,firstNumber,secondNumber)).toFixed(2);
+        console.log(resultNum)
+        if(resultNum == Infinity || resultNum == -Infinity){
+            resultHtml.innerText = "0.00";
             placeholderResult = "";
             resultNum = 0;
             placeholderResult += resultNum;
             doesOperatorExist = false;
+            resultOnScreen = true;
             operator = "";
             firstNumber = resultNum;
 
@@ -103,20 +107,13 @@ let operateButton = document.querySelector(".operate-button")
             resultHtml.innerText = "";
             doesOperatorExist = false;  
             resultOnScreen = false;
-
-
         }
-        
-
-
-
-
-        });
+    });
 
 
 //Math Functions
 function add(num1,num2){
-    return num1 + num2;
+    return Number(num1) + Number(num2);
 }
 
 function subtract(num1,num2){
